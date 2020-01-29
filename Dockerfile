@@ -9,6 +9,7 @@ RUN apk add dockerize gosu --no-cache --repository http://dl-cdn.alpinelinux.org
 
 RUN apk add --no-cache --virtual .build-dependencies autoconf make g++ curl curl-dev icu-dev libzip-dev zlib-dev coreutils bash \
     && apk add postgresql-dev \
+    && apk add libzip \
     && apk add make \
     && apk add --no-cache icu git openssh-client \
     && docker-php-ext-install -j$(nproc) curl iconv intl json mbstring opcache mysqli zip pdo pdo_pgsql \
