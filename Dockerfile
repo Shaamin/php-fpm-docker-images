@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine
+FROM php:7.3-fpm-alpine
 
 ENV SYMFONY_ENV dev
 
@@ -7,7 +7,7 @@ ARG GROUP_ID
 
 RUN apk add dockerize gosu --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing/
 
-RUN apk add --no-cache --virtual .build-dependencies autoconf make g++ curl curl-dev icu-dev zlib-dev coreutils bash \
+RUN apk add --no-cache --virtual .build-dependencies autoconf make g++ curl curl-dev icu-dev libzip-dev zlib-dev coreutils bash \
     && apk add postgresql-dev \
     && apk add make \
     && apk add --no-cache icu git openssh-client \
